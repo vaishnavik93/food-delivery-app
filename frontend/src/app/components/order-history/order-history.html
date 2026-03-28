@@ -1,0 +1,72 @@
+<div class="container mt-5">
+
+<h2 class="mb-4 text-center">My Orders</h2>
+
+<div *ngIf="orders.length === 0" class="alert alert-info text-center">
+No orders found
+</div>
+
+<table *ngIf="orders.length > 0" class="table table-striped table-bordered shadow">
+
+<thead class="table-dark">
+
+<tr>
+<th>Order ID</th>
+<th>Total Amount</th>
+<th>Status</th>
+<th>Track Order</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr *ngFor="let order of orders">
+
+<td>#{{order.orderId}}</td>
+
+<td>₹{{order.totalAmount}}</td>
+
+<td>
+
+<span class="badge bg-warning text-dark"
+*ngIf="order.orderStatus=='Preparing'">
+Preparing
+</span>
+
+<span class="badge bg-primary"
+*ngIf="order.orderStatus=='Out for Delivery'">
+Out for Delivery
+</span>
+
+<span class="badge bg-success"
+*ngIf="order.orderStatus=='Delivered'">
+Delivered
+</span>
+
+<span class="badge bg-secondary"
+*ngIf="order.orderStatus=='Order Placed'">
+Order Placed
+</span>
+
+</td>
+
+<td>
+
+<a 
+class="btn btn-sm btn-info"
+[routerLink]="['/track', order.orderId]">
+
+Track
+
+</a>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>

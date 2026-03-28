@@ -1,0 +1,60 @@
+
+<div class="register-container">
+
+<div class="register-card">
+
+<h2>Create Account</h2>
+
+<form (ngSubmit)="register()">
+
+<input
+type="text"
+placeholder="Full Name"
+[(ngModel)]="customer.name"
+name="name"
+required
+/>
+
+<input
+type="email"
+placeholder="Email"
+[(ngModel)]="customer.email"
+name="email"
+required
+/>
+
+<input
+type="password"
+placeholder="Password"
+[(ngModel)]="customer.password"
+name="password"
+required
+/>
+
+<input
+type="text"
+placeholder="Phone Number"
+[(ngModel)]="customer.phone"
+name="phone"
+required
+/>
+
+<textarea
+placeholder="Address"
+[(ngModel)]="customer.address"
+name="address"
+required
+></textarea>
+
+<button type="submit">Register</button>
+
+<p>
+Already have an account?
+<a routerLink="/login">Login</a>
+</p>
+
+</form>
+
+</div>
+
+</div>

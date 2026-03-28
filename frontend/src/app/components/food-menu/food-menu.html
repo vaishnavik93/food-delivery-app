@@ -1,0 +1,30 @@
+<div class="menu-header">
+  <h1>🍔 Delicious Food Menu</h1>
+
+  <a routerLink="/cart" class="cart-btn">
+    🛒 View Cart
+  </a>
+</div>
+<div class="food-container">
+
+<div class="food-card" *ngFor="let food of foods">
+
+<img src="/foods/{{food.imageUrl}}">
+
+<h3>{{food.name}}</h3>
+
+<p>{{food.description}}</p>
+
+<div class="food-footer">
+
+<span class="price">₹{{food.price}}</span>
+
+<button (click)="addToCart(food)">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</div>

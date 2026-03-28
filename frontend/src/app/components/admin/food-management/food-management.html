@@ -1,0 +1,48 @@
+
+<div class="container mt-4">
+
+<h3>Food Management</h3>
+
+<button class="btn btn-success mb-3">
+
+Add Food
+
+</button>
+
+<table class="table">
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+<th>Price</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr *ngFor="let food of foods">
+
+<td>{{food.name}}</td>
+
+<td>{{food.price}}</td>
+
+<td>
+
+<button class="btn btn-warning">Edit</button>
+
+<button class="btn btn-danger">Delete</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
